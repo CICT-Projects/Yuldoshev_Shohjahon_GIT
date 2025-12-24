@@ -16,9 +16,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapGet("/branch1", () =>
+app.MapGet("/branch3", () =>
 {
-    return "Branch1";
+    return "Branch3";
 });
 app.UseHttpsRedirection();
 
