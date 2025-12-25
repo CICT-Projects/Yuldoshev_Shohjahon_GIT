@@ -16,9 +16,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapGet("/branch1", () =>
+app.MapGet("/clone", () =>
 {
-    return "Branch1";
+    return "git clone";
 });
 app.UseHttpsRedirection();
 
