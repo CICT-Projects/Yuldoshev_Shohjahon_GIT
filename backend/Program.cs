@@ -8,6 +8,15 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=cars.db"));
 
+// Allow the frontend (vite dev server) to call the API during development
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy => policy
+        .AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod());
+});
+
 var app = builder.Build();
 
 // Ensure database is created
@@ -22,6 +31,8 @@ app.MapGet("/", () => Results.Content(
     "text/html"));
 
 app.UseStaticFiles();
+
+app.UseCors();
 
 app.MapControllers();
 
