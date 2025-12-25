@@ -1,2 +1,1 @@
-HomeWork_Day_2\n
-React + C#(Backend)
+HomeWork_Day_2  ,  React + C#(Backend)
