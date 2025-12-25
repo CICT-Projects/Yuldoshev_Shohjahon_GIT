@@ -1,0 +1,13 @@
+@model backend.Models.Motor
+@{
+  Layout = "~/Views/Shared/_Layout.cshtml";
+  ViewData["Title"] = "Edit Motor";
+}
+<h1>Edit Motor</h1>
+<form method="post" action="/motors-ui/edit/@Model.Id">
+  @Html.AntiForgeryToken()
+  <input type="hidden" name="Id" value="@Model.Id" />
+  <label>Name: <input name="Name" value="@Model.Name" required /></label><br/>
+  <label>Brand: <input name="Brand" value="@Model.Brand" required /></label><br/>
+  <button type="submit">Save</button> <a href="/motors-ui">Cancel</a>
+</form>

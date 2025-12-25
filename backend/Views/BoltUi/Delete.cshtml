@@ -1,0 +1,11 @@
+@model backend.Models.Bolt
+@{
+  Layout = "~/Views/Shared/_Layout.cshtml";
+  ViewData["Title"] = "Delete Bolt";
+}
+<h1>Delete Bolt</h1>
+<p>Delete <strong>@Model.Name</strong>?</p>
+<form method="post" action="/bolt-ui/delete/@Model.Id">
+  @Html.AntiForgeryToken()
+  <button type="submit">Delete</button> <a href="/bolt-ui">Cancel</a>
+</form>

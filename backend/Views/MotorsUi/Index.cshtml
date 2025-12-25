@@ -1,0 +1,16 @@
+@model IEnumerable<backend.Models.Motor>
+<!doctype html>
+<html>
+<head><meta charset="utf-8" /><title>Motors</title></head>
+<body>
+  <h1>Motors</h1>
+  <p><a href="/motors-ui/create">Create</a></p>
+  <table border="1"><thead><tr><th>Id</th><th>Name</th><th>Brand</th><th>Actions</th></tr></thead>
+  <tbody>
+  @foreach(var m in Model) {
+    <tr><td>@m.Id</td><td>@m.Name</td><td>@m.Brand</td>
+    <td><a href="/motors-ui/edit/@m.Id">Edit</a> | <a href="/motors-ui/delete/@m.Id">Delete</a></td></tr>
+  }
+  </tbody></table>
+</body>
+</html>

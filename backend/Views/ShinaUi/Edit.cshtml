@@ -1,0 +1,14 @@
+@model backend.Models.Shina
+@{
+  Layout = "~/Views/Shared/_Layout.cshtml";
+  ViewData["Title"] = "Edit Shina";
+}
+<h1>Edit Shina</h1>
+<form method="post" action="/shina-ui/edit/@Model.Id">
+  @Html.AntiForgeryToken()
+  <input type="hidden" name="Id" value="@Model.Id" />
+  <label>Name: <input name="Name" value="@Model.Name" required /></label><br />
+  <label>Brand: <input name="Brand" value="@Model.Brand" required /></label><br />
+  <button type="submit">Save</button>
+</form>
+<p><a href="/shina-ui">Back</a></p>

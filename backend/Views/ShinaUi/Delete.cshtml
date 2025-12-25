@@ -1,0 +1,11 @@
+@model backend.Models.Shina
+@{
+  Layout = "~/Views/Shared/_Layout.cshtml";
+  ViewData["Title"] = "Delete Shina";
+}
+<h1>Delete Shina</h1>
+<p>Delete <strong>@Model.Name</strong>?</p>
+<form method="post" action="/shina-ui/delete/@Model.Id">
+  @Html.AntiForgeryToken()
+  <button type="submit">Delete</button> <a href="/shina-ui">Cancel</a>
+</form>

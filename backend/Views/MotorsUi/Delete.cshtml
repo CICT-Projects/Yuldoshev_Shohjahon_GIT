@@ -1,0 +1,11 @@
+@model backend.Models.Motor
+@{
+  Layout = "~/Views/Shared/_Layout.cshtml";
+  ViewData["Title"] = "Delete Motor";
+}
+<h1>Delete Motor</h1>
+<p>Delete <strong>@Model.Name</strong>?</p>
+<form method="post" action="/motors-ui/delete/@Model.Id">
+  @Html.AntiForgeryToken()
+  <button type="submit">Delete</button> <a href="/motors-ui">Cancel</a>
+</form>

@@ -1,0 +1,14 @@
+@model backend.Models.Bolt
+@{
+  Layout = "~/Views/Shared/_Layout.cshtml";
+  ViewData["Title"] = "Edit Bolt";
+}
+<h1>Edit Bolt</h1>
+<form method="post" action="/bolt-ui/edit/@Model.Id">
+  @Html.AntiForgeryToken()
+  <input type="hidden" name="Id" value="@Model.Id" />
+  <label>Name: <input name="Name" value="@Model.Name" required /></label><br />
+  <label>Brand: <input name="Brand" value="@Model.Brand" required /></label><br />
+  <button type="submit">Save</button>
+</form>
+<p><a href="/bolt-ui">Back</a></p>
