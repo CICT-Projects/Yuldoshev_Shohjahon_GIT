@@ -1,0 +1,17 @@
+@model backend.Models.Part
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Delete Part</title>
+</head>
+<body>
+  <h1>Delete Part</h1>
+  <p>Are you sure you want to delete <strong>@Model.Name</strong>?</p>
+  <form method="post" action="/parts-ui/delete/@Model.Id">
+    @Html.AntiForgeryToken()
+    <button type="submit">Delete</button>
+    <a href="/parts-ui">Cancel</a>
+  </form>
+</body>
+</html>
