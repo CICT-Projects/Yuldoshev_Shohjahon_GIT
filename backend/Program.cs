@@ -18,7 +18,11 @@ if (app.Environment.IsDevelopment())
 
 app.MapGet("/branch1", () =>
 {
-    return "Branch1";
+    return """My all branches: Branch1 , Branch2 , Branch3 , Branch4
+        git checkout branch1 
+        git checkout branch1
+        git checkout branch1
+        git checkout branch1""";
 });
 app.UseHttpsRedirection();
 
@@ -27,3 +31,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+
